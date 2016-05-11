@@ -52,8 +52,8 @@ int main(int argc, char *argv[])
     {
         if(argc != 8)
             throw exception();
-        failedPingsAllowed =    int(argv[1]);
-        messageRetryCount =     int(argv[2]);
+        failedPingsAllowed =    stoi(argv[1]);
+        messageRetryCount =     stoi(argv[2]);
         target =                    argv[3];
         smtpServer =                argv[4];
         smtpAuthUser =              argv[5];
