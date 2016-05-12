@@ -75,6 +75,12 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+    if (system("mailx") != 0)
+    {
+        syslog(LOG_MAKEPRI(LOG_USER, LOG_ERR), "mailx not found. IsAlive exiting.");
+        return -1;
+    }
+
     while (true) //Running loop
     {
         if (system(("ping -c 1 -q " + target).c_str()) == 0)

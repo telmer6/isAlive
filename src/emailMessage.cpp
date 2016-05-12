@@ -112,6 +112,8 @@ public:
     {
         if (system(NULL) == 0) //Fail if no shell
             return -1;
+        if (system("mailx") != 0) //Fail if mailx not installed
+            return -1;
         string command = "echo " + getBody() + " | mailx -v -r " + getSenderAddress() + " -s " + getSubject()
                         + " -S smtp=" + getServer() + " -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="
                         + getAuthUser() + "-S smtp-auth-password=" + smtpPassword + "-S ssl-verify=ignore "
