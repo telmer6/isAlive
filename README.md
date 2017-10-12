@@ -1,3 +1,5 @@
+## NOTE: I don't *think* there are any issues, but this project should be considered abandonware, as my needs are better met by uptimerobot.com.
+
 # isAlive
 A Linux Daemon to send email notifications when a host is unreachable. Requires mailx.
 
